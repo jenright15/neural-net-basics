@@ -28,8 +28,9 @@ def sigmoid(z):
     Notice that z can be a scalar, a vector or a matrix
     return the sigmoid of input z (same dimensions as z)
     '''
-    # remove the next line and replace it with your code
-    return z 
+    # remove the next line and replace it with your code 
+    sigmoid = 1/(1 + np.exp(-z))
+    return sigmoid
 
 def nnObjFunction(params, *args):
     '''
