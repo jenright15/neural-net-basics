@@ -5,7 +5,7 @@ import pickle
 '''
 You need to modify the functions except for initializeWeights() 
 '''
-
+## Hey its John :)
 def initializeWeights(n_in, n_out):
     '''
     initializeWeights return the random weights for Neural Network given the
