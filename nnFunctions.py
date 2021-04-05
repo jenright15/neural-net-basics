@@ -69,8 +69,19 @@ def nnObjFunction(params, *args):
     W2 = params[(n_hidden * (n_input + 1)):].reshape((n_class, (n_hidden + 1)))
 
     # remove the next two lines and replace them with your code 
-    obj_val = 0
+    b1 = np.ones(len(W1))
+    b2 = np.ones(len(W2))
+    aj = np.dot((np.dot(W1.T,n_hidden)),train_data) + b1
+    zj = sigmoid(aj)
+    
+    b_l = np.dot((np.dot(W2.T,n_hidden)),zj) + b2
+    o_l = sigmoid(b_l)
+    
+    
+    N = len(train_data)
+    obj_val = 1/N*(np.sum(train_label - o_l)**2)
     obj_grad = params 
+  
 
     return (obj_val,obj_grad)
 
